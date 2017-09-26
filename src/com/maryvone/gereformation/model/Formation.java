@@ -1,3 +1,5 @@
+package com.maryvone.gereformation.model;
+
 import java.util.ArrayList;
 import java.util.Date;
 

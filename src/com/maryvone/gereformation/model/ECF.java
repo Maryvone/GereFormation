@@ -1,3 +1,5 @@
+package com.maryvone.gereformation.model;
+
 public class ECF {
 
     private int id, note;

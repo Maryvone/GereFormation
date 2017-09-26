@@ -1,3 +1,5 @@
+package com.maryvone.gereformation.model;
+
 public class Personnel {
     private int id;
     private String nom,prenom,utilisateur,motDePasse,email, role;

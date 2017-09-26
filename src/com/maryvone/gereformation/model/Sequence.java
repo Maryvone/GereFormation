@@ -1,3 +1,5 @@
+package com.maryvone.gereformation.model;
+
 public class Sequence {
     private int id;
     private String nom,description;
