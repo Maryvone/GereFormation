@@ -7,6 +7,14 @@ public class Sequence {
     public Sequence(String nom, String description) {
         this.nom = nom;
         this.description = description;
+        this.id = -1;
+    }
+
+
+    public Sequence(int id, String nom, String description) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
     }
 
     public String getNom() {
@@ -28,4 +36,7 @@ public class Sequence {
     public int getId() {
         return id;
     }
+
+
 }
+

@@ -85,5 +85,43 @@ public class PersonnelDAO {
         return personnel;
     }
 
-    
+    public static void update(Personnel personnel) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("UPDATE personnel SET nom = ?, prenom = ?, utilisateur = ?, motDePasse = ?, role = ?, email = ? WHERE id = ?");
+
+            stm.setString(1, personnel.getNom());
+            stm.setString(2, personnel.getPrenom());
+            stm.setString(3, personnel.getUtilisateur());
+            stm.setString(4, personnel.getMotDePasse());
+            stm.setString(5, personnel.getRole());
+            stm.setString(6, personnel.getEmail());
+            stm.setInt(7, personnel.getId());
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void delete(Personnel personnel) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("DELETE FROM personnel WHERE id = ?");
+
+            stm.setInt(1, personnel.getId());
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

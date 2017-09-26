@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f0771bf-7eab-4309-a3ab-2c4167cc84b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/DBConnect.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/DBConnect.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/PersonnelDAO.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/PersonnelDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Personnel.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Personnel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +18,8 @@
       <file leaf-file-name="Personnel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/model/Personnel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="84" column="110" lean-forward="false" selection-start-line="84" selection-start-column="110" selection-end-line="84" selection-end-column="110" />
+            <state relative-caret-position="424">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,18 +52,30 @@
       <file leaf-file-name="Sequence.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="162">
+              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonnelDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SequenceDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/dao/SequenceDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1180">
+              <caret line="104" column="32" lean-forward="true" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonnelDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/dao/PersonnelDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="87" column="4" lean-forward="false" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+            <state relative-caret-position="284">
+              <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="3" selection-end-line="123" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,8 +98,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            <state relative-caret-position="234">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +138,8 @@
         <option value="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Personnel.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/PersonnelDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java" />
+        <option value="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/SequenceDAO.java" />
       </list>
     </option>
   </component>
@@ -496,18 +507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/model/Personnel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="84" column="110" lean-forward="false" selection-start-line="84" selection-start-column="110" selection-end-line="84" selection-end-column="110" />
+        <state relative-caret-position="424">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -516,18 +519,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="234">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/model/Sequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/dao/PersonnelDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="87" column="4" lean-forward="false" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+        <state relative-caret-position="284">
+          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="3" selection-end-line="123" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/maryvone/gereformation/dao/SequenceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="104" column="32" lean-forward="true" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
