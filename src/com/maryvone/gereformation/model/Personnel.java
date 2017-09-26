@@ -1,16 +1,31 @@
 package com.maryvone.gereformation.model;
 
+import com.maryvone.gereformation.dao.PersonnelDAO;
+
+import java.util.Scanner;
+
 public class Personnel {
     private int id;
     private String nom,prenom,utilisateur,motDePasse,email, role;
 
-    public Personnel( String nom, String prenom, String utilisateur, String motDePasse, String email, String role) {
+    public Personnel(String nom, String prenom, String utilisateur, String motDePasse, String email, String role) {
         this.nom = nom;
         this.prenom = prenom;
         this.utilisateur = utilisateur;
         this.motDePasse = motDePasse;
         this.email = email;
         this.role = role;
+        this.id =-1;
+    }
+
+    public Personnel( int id, String nom, String prenom, String utilisateur, String motDePasse, String email, String role) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.utilisateur = utilisateur;
+        this.motDePasse = motDePasse;
+        this.email = email;
+        this.role = role;
+        this.id = id;
     }
 
     public String getNom() {
@@ -64,4 +79,10 @@ public class Personnel {
     public int getId() {
         return id;
     }
+
+
+    public void affDesc (){
+        System.out.println(this.getId()+" "+ this.getNom()+" "+this.getPrenom()+" "+this.getUtilisateur()+" "+this.getEmail());
+    }
+
 }
