@@ -18,6 +18,31 @@ public class Stagiaire {
         this.mail = mail;
         this.telephone = telephone;
         this.formations = formations;
+        this.id=-1;
+    }
+
+    public Stagiaire(int id,  String nom, String prenom, ArrayList<Formation> formations, String adresse,int codePostal, String ville, String mail, String telephone ) {
+        this.id = id;
+        this.codePostal = codePostal;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.formations = formations;
+    }
+
+    public Stagiaire(int id,  String nom, String prenom, String adresse,int codePostal, String ville, String mail, String telephone) {
+        this.id = id;
+        this.codePostal = codePostal;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.formations= new ArrayList();
     }
 
     public int getCodePostal() {

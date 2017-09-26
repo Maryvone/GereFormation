@@ -1,7 +1,7 @@
 package com.maryvone.gereformation.model;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 public class Formation {
 private String libelle, description,lieu;
@@ -19,6 +19,20 @@ private Date dateDebut;
         this.modules = modules;
         this.formateur = formateur;
         this.dateDebut = dateDebut;
+        this.id=-1;
+    }
+
+    public Formation(String libelle, String description, String lieu, int id, int nbheures, int codeFormation, ArrayList<Module> modules, Personnel formateur, Date dateDebut) {
+        this.libelle = libelle;
+        this.description = description;
+        this.lieu = lieu;
+        this.id = id;
+        this.nbheures = nbheures;
+        this.codeFormation = codeFormation;
+        this.modules = modules;
+        this.formateur = formateur;
+        this.dateDebut = dateDebut;
+
     }
 
     public String getLibelle() {
