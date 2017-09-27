@@ -8,6 +8,15 @@ public class ECF {
     private Module idModule;
 
     public ECF(int note, String nom, Stagiaire idStagiaire, Module idModule) {
+        this.id = -1;
+        this.note = note;
+        this.nom = nom;
+        this.idStagiaire = idStagiaire;
+        this.idModule = idModule;
+    }
+
+    public ECF(int id, int note, String nom, Stagiaire idStagiaire, Module idModule) {
+        this.id = id;
         this.note = note;
         this.nom = nom;
         this.idStagiaire = idStagiaire;

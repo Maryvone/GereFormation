@@ -1,10 +1,14 @@
 package com.maryvone.gereformation.dao;
 
 import com.maryvone.gereformation.model.Formation;
+import com.maryvone.gereformation.model.Module;
+import com.maryvone.gereformation.model.Personnel;
 import com.maryvone.gereformation.model.Stagiaire;
 
 import java.sql.*;
+import java.text.Format;
 import java.util.ArrayList;
+import java.sql.Date;
 
 public class StagiaireDAO {
 
@@ -44,7 +48,7 @@ public class StagiaireDAO {
                 int id = rs.getInt("id");
                 String nom= rs.getString("nom");
                 String prenom= rs.getString("prenom");
-                ArrayList<Formation> formations =FormationDAO.findonebyID(rs.getInt("idFormation"));
+                ArrayList<Formation> formations =getFormations(id);
                 String adresse = rs.getString("adresse");
                 int codePostal = rs.getInt("codePostal");
                 String ville = rs.getString("ville");
@@ -94,6 +98,33 @@ public class StagiaireDAO {
         }
 
         return stagiaires;
+    }
+
+    public static ArrayList<Formation> getFormations(int stagiaireId) throws SQLException {
+        ArrayList<Module> modules;
+        ArrayList<Formation> formations = new ArrayList<>();
+        Connection c =DBConnect.getConnection();
+        Statement stm;
+        String sql="SELECT * FROM formation INNER JOIN gestionFormation ON id=gestionFormation.idFormation WHERE idstagiaire ="+stagiaireId;
+        stm= c.createStatement();
+        ResultSet rs =stm.executeQuery(sql);
+
+        while(rs.next()){
+            int id=rs.getInt("id");
+            String libelle= rs.getString("libelle");
+            String description = rs.getString("description");
+            int nbHeures = rs.getInt("nbHeures");
+            String lieu = rs.getString("lieu");
+            Date dateDebut = rs.getDate("dateDebut");
+            Personnel formateur = PersonnelDAO.findById(rs.getInt("idFormateur"));
+            int codeFormation = rs.getInt("codeFormation");
+            modules=FormationDAO.getModules(id);
+
+
+            Formation formation = new Formation(libelle, description, lieu, id, nbHeures, codeFormation, modules, formateur, dateDebut);
+            formations.add(formation);
+        }
+        return formations;
     }
 
 

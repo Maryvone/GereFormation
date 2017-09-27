@@ -1,19 +1,29 @@
 package com.maryvone.gereformation.model;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
-public class Module {
+public class Module  {
 
     private int id,duree;
     private String libelle, description;
-    private ArrayList<ECF> eCFs;
     private ArrayList<Sequence> sequences;
 
-    public Module(int duree, String libelle, String description, ArrayList<ECF> eCFs, ArrayList<Sequence> sequences) {
+  public Module(int duree, String libelle, String description, ArrayList<Sequence> sequences) {
+       this.duree = duree;
+       this.libelle = libelle;
+      this.description = description;
+      this.sequences = sequences;
+       this.id = -1;
+   }
+
+
+
+    public Module(int id, int duree, String libelle, String description, ArrayList<Sequence> sequences) {
+        this.id = id;
         this.duree = duree;
         this.libelle = libelle;
         this.description = description;
-        this.eCFs = eCFs;
         this.sequences = sequences;
     }
 
@@ -41,13 +51,6 @@ public class Module {
         this.description = description;
     }
 
-    public ArrayList<ECF> geteCFs() {
-        return eCFs;
-    }
-
-    public void seteCFs(ArrayList<ECF> eCFs) {
-        this.eCFs = eCFs;
-    }
 
     public ArrayList<Sequence> getSequences() {
         return sequences;
@@ -60,4 +63,6 @@ public class Module {
     public int getId() {
         return id;
     }
+
+
 }

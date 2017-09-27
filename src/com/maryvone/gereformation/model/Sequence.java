@@ -1,6 +1,9 @@
 package com.maryvone.gereformation.model;
 
-public class Sequence {
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class Sequence  {
     private int id;
     private String nom,description;
 
@@ -36,6 +39,7 @@ public class Sequence {
     public int getId() {
         return id;
     }
+
 
 
 }
