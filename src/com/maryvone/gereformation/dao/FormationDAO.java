@@ -1,8 +1,12 @@
 package com.maryvone.gereformation.dao;
 
 import com.maryvone.gereformation.model.Formation;
+import com.maryvone.gereformation.model.Module;
+import com.maryvone.gereformation.model.Personnel;
+import com.maryvone.gereformation.model.Stagiaire;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class FormationDAO {
 
@@ -25,7 +29,7 @@ public class FormationDAO {
 
     }
 
-    // ***************** READ
+    // **************************  READ **************************
 
     public static Formation findonebyID (int id) throws SQLException {
         Formation formation = null;
@@ -51,6 +55,75 @@ public class FormationDAO {
             throw new RuntimeException();
         }
 
-        return sequence;
+        return formation;
     }
+
+    public static ArrayList<Formation> findAll () throws SQLException {
+        ArrayList<Formation> formations = new ArrayList<>();
+        Connection c = DBConnect.getConnection();
+        Statement stm;
+        String sql = "SELECT * FROM formation";
+        stm = c.createStatement();
+        ResultSet rs = stm.executeQuery(sql);
+
+        while (rs.next()) {
+
+            int id = rs.getInt("id");
+            String libelle= rs.getString("libelle");
+            String description= rs.getString("description");
+            int nbheures = rs.getInt("nbHeures");
+            String lieu= rs.getString("lieu");
+            Date dateDebut= rs.getDate("dateDebut");
+            ArrayList<Module> modules = ModuleDAO.findonebyID(rs.getInt("idModule"));
+            Personnel formateur = PersonnelDAO.findById(rs.getInt("idFormateur"));
+            int codeFormation = rs.getInt("codeFormation");
+
+
+            Formation formation = new Formation(libelle,description,lieu,id,nbheures,codeFormation,modules,formateur,dateDebut);
+            formations.add(formation);
+        }
+        return formations;
+    }
+
+    //******************************** UPDATE *************************
+
+    public static void update(Formation formation) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("UPDATE formation SET libelle = ?, description = ?, nbHeures = ?, lieu = ?, dateDebut = ?, codeFormation = ? WHERE id = ?");
+
+            stm.setString(1, formation.getLibelle());
+            stm.setString(2, formation.getDescription());
+            stm.setInt(3, formation.getNbheures());
+            stm.setString(4, formation.getLieu());
+            stm.setDate(5, formation.getDateDebut());
+            stm.setInt(6, formation.getCodeFormation());
+            stm.setInt(7, formation.getId());
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //************************************* DELETE ************************
+
+    public static void delete(Formation formation) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("DELETE FROM formation WHERE id = ?");
+            stm.setInt(1, formation.getId());
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

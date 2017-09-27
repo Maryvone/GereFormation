@@ -86,9 +86,6 @@ public class StagiaireDAO {
                 stagiaires.add(stagiaire);
 
 
-
-
-
             }
             rs.close();
 
