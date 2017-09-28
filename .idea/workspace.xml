@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f0771bf-7eab-4309-a3ab-2c4167cc84b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/ECFDAO.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/ECFDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/StagiaireDAO.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/dao/StagiaireDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/ECF.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/ECF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Formation.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Formation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Module.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Module.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Stagiaire.java" afterPath="$PROJECT_DIR$/src/com/maryvone/gereformation/model/Stagiaire.java" />
-    </list>
+    <list default="true" id="3f0771bf-7eab-4309-a3ab-2c4167cc84b3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
