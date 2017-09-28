@@ -18,7 +18,7 @@ public class StagiaireDAO {
         Connection c = DBConnect.getConnection();
         PreparedStatement stm;
 
-            stm = c.prepareStatement("INSERT INTO sequence( nom,prenom, adresse,codePostale,ville, mail,telephone) VALUES (?,?,?,?,?,?,?) ");
+            stm = c.prepareStatement("INSERT INTO stagiaire( nom,prenom, adresse,codePostal,ville, mail,telephone) VALUES (?,?,?,?,?,?,?) ");
             stm.setString(1,stagiaire.getNom());
             stm.setString(2,stagiaire.getPrenom());
             stm.setString(3,stagiaire.getAdresse());
@@ -34,6 +34,42 @@ public class StagiaireDAO {
 
     // **************************  READ **************************
 
+
+    public static Stagiaire findOneById(int id){
+
+        Stagiaire stagiaire = null;
+        Connection c = DBConnect.getConnection();
+        Statement stm;
+        try {
+            stm = c.createStatement();
+
+            String sql = "select * from stagiaire WHERE id=" + id;
+            ResultSet rs = stm.executeQuery(sql);
+
+            if (rs.next()) {
+
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String adresse = rs.getString("adresse");
+                int codePostal = rs.getInt("codePostal");
+                String ville = rs.getString("ville");
+                String mail = rs.getString("mail");
+                String telephone = rs.getString("telephone");
+
+                stagiaire = new Stagiaire(id, nom,prenom,adresse,codePostal,  ville,  mail,  telephone);
+
+
+            }
+            rs.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        }
+
+
+
+        return stagiaire;
+    }
     public static ArrayList<Stagiaire> findAll() {
         ArrayList<Stagiaire> stagiaires = new ArrayList<>();
         Statement stm;

@@ -1,8 +1,7 @@
 
 package com.maryvone.gereformation.dao;
 
-import com.maryvone.gereformation.model.ECF;
-import com.maryvone.gereformation.model.Formation;
+import com.maryvone.gereformation.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,9 +14,8 @@ public class ECFDAO {
         Connection c = DBConnect.getConnection();
         PreparedStatement stm;
 
-        stm = c.prepareStatement("INSERT INTO ECF ( nom,note) VALUES (?,?) ");
+        stm = c.prepareStatement("INSERT INTO ECF ( nom) VALUES (?) ");
         stm.setString(1,ecf.getNom());
-        stm.setInt(2,ecf.getNote());
 
         stm.execute();
         stm.close();
@@ -28,6 +26,7 @@ public class ECFDAO {
     //**************** READ ********************
 
     public static ArrayList<ECF> findAll () throws SQLException {
+        Module module;
         ArrayList<ECF> ecfs = new ArrayList<>();
         Connection c = DBConnect.getConnection();
         Statement stm;
@@ -39,17 +38,84 @@ public class ECFDAO {
 
             int id = rs.getInt("id");
             String nom= rs.getString("nom");
-            int note = rs.getInt("note");
-            ArrayList
-
-            ArrayList<ECF> modules = getModules(id);
-            Personnel formateur = PersonnelDAO.findById(rs.getInt("idFormateur"));
-            int codeFormation = rs.getInt("codeFormation");
-
-
-            Formation formation = new Formation(libelle,description,lieu,id,nbheures,codeFormation,modules,formateur,dateDebut);
-            formations.add(formation);
+            int moduleid =rs.getInt("idModule");
+            module = ModuleDAO.findonebyID (moduleid);
+            ECF ecf = new ECF(id,nom,module);
+            ecfs.add(ecf);
         }
-        return formations;
+        return ecfs;
     }
+
+    public static ECF findonebyID (int id) throws SQLException {
+        ECF ecf = null;
+        Module module = null;
+        Connection c = DBConnect.getConnection();
+        Statement stm;
+        try {
+            stm = c.createStatement();
+
+            String sql = "select * from ECF WHERE id=" + id;
+            ResultSet rs = stm.executeQuery(sql);
+
+            if (rs.next()) {
+
+                String nom = rs.getString("nom");
+                int idModule = rs.getInt("idModule");
+                module = ModuleDAO.findonebyID (idModule);
+
+                ecf = new ECF(id, nom, module);
+
+
+            }
+            rs.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        }
+
+        return ecf;
+    }
+
+    //******************************** UPDATE *************************
+
+    public static void update(ECF ecf) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("UPDATE ECF SET nom = ?, WHERE id = ?");
+
+            stm.setString(1, ecf.getNom());
+
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //************************************* DELETE ************************
+
+    public static void delete(ECF ecf) {
+        Connection c = DBConnect.getConnection();
+        PreparedStatement stm;
+
+        try {
+            stm = c.prepareStatement("DELETE FROM ECF WHERE id = ?");
+            stm.setInt(1, ecf.getId());
+            stm.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+    // ********************* Method for Notes **************************
+
+
+
+
+
+
 }

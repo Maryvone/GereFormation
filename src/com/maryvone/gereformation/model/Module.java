@@ -27,6 +27,12 @@ public class Module  {
         this.sequences = sequences;
     }
 
+    public Module(int duree, String libelle, String description) {
+        this.duree = duree;
+        this.libelle = libelle;
+        this.description = description;
+    }
+
     public int getDuree() {
         return duree;
     }

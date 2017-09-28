@@ -1,34 +1,29 @@
 package com.maryvone.gereformation.model;
 
+import java.util.ArrayList;
+
 public class ECF {
 
-    private int id, note;
+    private int id;
     private String nom;
-    private Stagiaire idStagiaire;
     private Module idModule;
 
-    public ECF(int note, String nom, Stagiaire idStagiaire, Module idModule) {
+    public ECF( String nom, Module idModule) {
         this.id = -1;
-        this.note = note;
         this.nom = nom;
-        this.idStagiaire = idStagiaire;
         this.idModule = idModule;
     }
 
-    public ECF(int id, int note, String nom, Stagiaire idStagiaire, Module idModule) {
+    public ECF(int id, String nom, Module idModule) {
         this.id = id;
-        this.note = note;
         this.nom = nom;
-        this.idStagiaire = idStagiaire;
         this.idModule = idModule;
     }
 
-    public int getNote() {
-        return note;
-    }
-
-    public void setNote(int note) {
-        this.note = note;
+    public ECF(String nom) {
+        this.nom = nom;
+        this.idModule= null;
+        this.id=-1;
     }
 
     public String getNom() {
@@ -39,13 +34,6 @@ public class ECF {
         this.nom = nom;
     }
 
-    public Stagiaire getIdStagiaire() {
-        return idStagiaire;
-    }
-
-    public void setIdStagiaire(Stagiaire idStagiaire) {
-        this.idStagiaire = idStagiaire;
-    }
 
     public Module getIdModule() {
         return idModule;

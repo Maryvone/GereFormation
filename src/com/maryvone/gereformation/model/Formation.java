@@ -2,9 +2,9 @@ package com.maryvone.gereformation.model;
 
 import java.util.ArrayList;
 import java.sql.Date;
-import java.util.stream.Stream;
 
-public class Formation extends ArrayList<Formation> {
+
+public class Formation  {
 private String libelle, description,lieu;
 private int id, nbheures,codeFormation;
 private ArrayList<Module> modules;
@@ -34,6 +34,15 @@ private Date dateDebut;
         this.formateur = formateur;
         this.dateDebut = dateDebut;
 
+    }
+
+    public Formation(String libelle, String description, String lieu, int nbheures, int codeFormation, Date dateDebut) {
+        this.libelle = libelle;
+        this.description = description;
+        this.lieu = lieu;
+        this.nbheures = nbheures;
+        this.codeFormation = codeFormation;
+        this.dateDebut = dateDebut;
     }
 
     public Formation(int id, String nom, String description) {
@@ -107,8 +116,5 @@ private Date dateDebut;
         return id;
     }
 
-    @Override
-    public Stream<Formation> stream() {
-        return null;
-    }
+
 }

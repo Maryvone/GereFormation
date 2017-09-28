@@ -43,6 +43,20 @@ public class Stagiaire {
         this.mail = mail;
         this.telephone = telephone;
         this.formations= new ArrayList();
+
+
+    }
+
+    public Stagiaire(int codePostal, String nom, String prenom, String adresse, String ville, String mail, String telephone) {
+        this.codePostal = codePostal;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.id=-1;
+        this.formations=new ArrayList<>();
     }
 
     public int getCodePostal() {
