@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.com.maryvone.gereformation.gui;
+package src.com.maryvone.gereformation.gui.forms;
 
 import com.maryvone.gereformation.dao.ModuleDAO;
 import com.maryvone.gereformation.model.Module;
@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import src.com.maryvone.gereformation.gui.Home;
 
 /**
  *
@@ -67,6 +68,11 @@ private Home home;
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/com/maryvone/gereformation/gui/Icon/back-arrow.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cancelLayout = new javax.swing.GroupLayout(cancel);
         cancel.setLayout(cancelLayout);
@@ -184,15 +190,19 @@ private Home home;
     } catch (Exception ex) {
         Logger.getLogger(ModuleCreationForm.class.getName()).log(Level.SEVERE, null, ex);
     }
-    //okDialog.setVisible(true);
+     JOptionPane jop1;
+       jop1 = new JOptionPane();
+       jop1.showMessageDialog(null, "Module crée", "Information", JOptionPane.INFORMATION_MESSAGE);
+       home.init();
     }//GEN-LAST:event_validerMouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-       JOptionPane jop1;
-       jop1 = new JOptionPane();
-       jop1.showMessageDialog(null, "Vous êtes un gros con", "Information", JOptionPane.INFORMATION_MESSAGE);
-       home.init();
+      
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        home.init();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.com.maryvone.gereformation.gui;
+package src.com.maryvone.gereformation.gui.menus;
 
+import src.com.maryvone.gereformation.gui.menus.formationMenuCreate;
 import java.awt.Color;
 import javax.swing.JPanel;
+import src.com.maryvone.gereformation.gui.Home;
 
 
 /**

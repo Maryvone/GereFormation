@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.com.maryvone.gereformation.gui;
+package src.com.maryvone.gereformation.gui.forms;
 
 import com.maryvone.gereformation.dao.FormationDAO;
 import com.maryvone.gereformation.model.Formation;
@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import src.com.maryvone.gereformation.gui.Home;
 
 /**
  *
@@ -25,6 +26,7 @@ private Home home;
      * Creates new form FormationCreationForm
      */
     public FormationCreationForm(Home home) {
+        this.home=home;
         initComponents();
     }
 
@@ -76,6 +78,11 @@ private Home home;
         cancel.setBackground(new java.awt.Color(248, 248, 248));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/com/maryvone/gereformation/gui/Icon/back-arrow.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout cancelLayout = new javax.swing.GroupLayout(cancel);
         cancel.setLayout(cancelLayout);
@@ -232,6 +239,10 @@ private Home home;
     
    
     }//GEN-LAST:event_validateMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+      home.init();
+    }//GEN-LAST:event_jLabel7MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.com.maryvone.gereformation.gui;
+package src.com.maryvone.gereformation.gui.menus;
+
+import src.com.maryvone.gereformation.gui.forms.FormationCreationForm;
+import src.com.maryvone.gereformation.gui.Home;
+import src.com.maryvone.gereformation.gui.forms.ECFCreationForm;
+import src.com.maryvone.gereformation.gui.forms.ModuleCreationForm;
+import src.com.maryvone.gereformation.gui.forms.SequenceCreationForm;
 
 /**
  *
@@ -55,6 +61,11 @@ public class formationMenuCreate extends javax.swing.JPanel {
         nouvelleFormation.add(jLabel5);
 
         nouvelleSequence.setBackground(new java.awt.Color(204, 204, 204));
+        nouvelleSequence.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nouvelleSequenceMouseClicked(evt);
+            }
+        });
 
         jLabel2.setText("Nouvelle");
         nouvelleSequence.add(jLabel2);
@@ -63,6 +74,11 @@ public class formationMenuCreate extends javax.swing.JPanel {
         nouvelleSequence.add(jLabel7);
 
         nouveauECF.setBackground(new java.awt.Color(204, 204, 204));
+        nouveauECF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nouveauECFMouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("Nouveau");
         nouveauECF.add(jLabel4);
@@ -121,6 +137,16 @@ public class formationMenuCreate extends javax.swing.JPanel {
        ModuleCreationForm panel = new ModuleCreationForm(home);
        home.setResultPanel(panel);
     }//GEN-LAST:event_nouveauModuleMouseClicked
+
+    private void nouvelleSequenceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouvelleSequenceMouseClicked
+       SequenceCreationForm panel = new SequenceCreationForm(home);
+       home.setResultPanel(panel);
+    }//GEN-LAST:event_nouvelleSequenceMouseClicked
+
+    private void nouveauECFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nouveauECFMouseClicked
+        ECFCreationForm panel = new ECFCreationForm(home);
+        home.setResultPanel(panel);
+    }//GEN-LAST:event_nouveauECFMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
